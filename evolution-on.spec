@@ -24,9 +24,10 @@ Plugin to put evolution in system tray.
 
 %prep
 %autosetup -n %{name}-master
-./autogen.sh
+NOCONFIGURE=1 ./autogen.sh
 
 %build
+./configure --prefix=/usr
 make
 
 %install
@@ -36,8 +37,8 @@ make
 rm -rf $RPM_BUILD_ROOT
 
 %files
-/usr/local/share/GConf/gsettings/evolution-on.convert
-/usr/local/share/glib-2.0/schemas/org.gnome.evolution.plugin.evolution-on.gschema.xml
+/usr/share/GConf/gsettings/evolution-on.convert
+/usr/share/glib-2.0/schemas/org.gnome.evolution.plugin.evolution-on.gschema.xml
 /usr/lib64/evolution/plugins/org-gnome-evolution-on.eplug
 /usr/lib64/evolution/plugins/liborg-gnome-evolution-on.so
 /usr/lib64/evolution/plugins/liborg-gnome-evolution-on.la
