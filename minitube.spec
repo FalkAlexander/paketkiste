@@ -1,5 +1,7 @@
+%global debug_package %{nil}
+
 Name:           minitube
-Version:        3.6.1
+Version:        3.6.2
 Release:        1
 Summary:        Minitube is a YouTube desktop application. It is written in C++ using the Qt framework.
 
@@ -28,6 +30,12 @@ Minitube is a YouTube desktop application. It is written in C++ using the Qt fra
 %build
 qmake-qt5 "DEFINES+=APP_GOOGLE_API_KEY=AIzaSyBs1wuIgc-QDnk5u7OavF1loJVO0r89B4Y" PREFIX=$RPM_BUILD_ROOT/usr
 %make_build %{?_smp_mflags}
+
+%install
+make install prefix=%{_prefix} INSTALL="%{__install} -p" \
+DESTDIR=$RPM_BUILD_ROOT
+
+find $RPM_BUILD_ROOT -type f | xargs sed -i "s|$RPM_BUILD_ROOT||g"
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -87,7 +95,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/minitube/locale/zh_TW.qm
 /usr/share/minitube/sounds/snapshot.wav
 /usr/share/applications/minitube.desktop
-/usr/share/appdata/minitube.appdata.xml
+/usr/share/metainfo/org.tordini.flavio.minitube.metainfo.xml
 /usr/share/icons/hicolor/scalable/apps/minitube.svg
 /usr/share/icons/hicolor/16x16/apps/minitube.png
 /usr/share/icons/hicolor/22x22/apps/minitube.png
