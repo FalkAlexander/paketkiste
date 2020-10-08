@@ -27,6 +27,7 @@ Minitube is a YouTube desktop application. It is written in C++ using the Qt fra
 
 %build
 qmake-qt5 "DEFINES+=APP_GOOGLE_API_KEY=AIzaSyBs1wuIgc-QDnk5u7OavF1loJVO0r89B4Y" PREFIX=$RPM_BUILD_ROOT/usr
+%make_build %{?_smp_mflags}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
