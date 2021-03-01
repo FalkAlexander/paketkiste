@@ -2,7 +2,7 @@
 %global debug_package %{nil}
 
 Name:           gopass
-Version:        1.10.1
+Version:        1.12.1
 Release:        1
 Summary:        The slightly more awesome standard unix password manager for teams
 
