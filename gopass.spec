@@ -35,4 +35,5 @@ rm -rf $RPM_BUILD_ROOT
 %exclude /usr/share/zsh/site-functions/_gopass
 /usr/share/bash-completion/completions/gopass
 %exclude /usr/share/fish/vendor_completions.d/gopass.fish
+/usr/share/man/man1/gopass.1.gz
 /usr/bin/*
