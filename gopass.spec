@@ -2,7 +2,7 @@
 %global debug_package %{nil}
 
 Name:           gopass
-Version:        1.12.1
+Version:        1.12.8
 Release:        1
 Summary:        The slightly more awesome standard unix password manager for teams
 
@@ -14,6 +14,7 @@ BuildRequires:  git
 BuildRequires:  tar
 BuildRequires:  gzip
 BuildRequires:  golang
+BuildRequires:  gnupg2
 
 %description
 The slightly more awesome standard unix password manager for teams
@@ -34,8 +35,4 @@ rm -rf $RPM_BUILD_ROOT
 %exclude /usr/share/zsh/site-functions/_gopass
 /usr/share/bash-completion/completions/gopass
 %exclude /usr/share/fish/vendor_completions.d/gopass.fish
-/usr/bin/gopass
-/usr/bin/gopass-git-credentials
-/usr/bin/gopass-hibp
-/usr/bin/gopass-jsonapi
-/usr/bin/gopass-summon-provider
+/usr/bin/*
