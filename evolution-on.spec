@@ -4,8 +4,8 @@ Release:       1
 Summary:       Plugin to put evolution in system tray.
 
 License:       GPLv2
-URL:           https://github.com/acidrain42/evolution-on
-Source0:       https://github.com/acidrain42/evolution-on/archive/master.tar.gz
+URL:           https://github.com/KostadinAtanasov/evolution-on
+Source0:       https://github.com/KostadinAtanasov/evolution-on/archive/master.tar.gz
 
 BuildRequires: automake
 BuildRequires: autoconf
